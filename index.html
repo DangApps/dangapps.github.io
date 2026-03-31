@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DANG APPS | Finish-Line Agency for Vibe-Coded Apps</title>
+  <meta
+    name="description"
+    content="DANG APPS is a premium agency that helps vibe-coded apps reach the finish line."
+  >
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <style>
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --container: 80rem;
+      --header-height: 5.5rem;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--black);
+      font-family: "Inter", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 3rem), var(--container));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      height: var(--header-height);
+      background: var(--white);
+      border-bottom: 1px solid var(--black);
+    }
+
+    .site-header .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.5rem;
+      padding: 0.9rem 2.5rem;
+      border: 2px solid var(--black);
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: background-color 300ms ease, color 300ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: calc(var(--header-height) + 3rem) 0 4rem;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .eyebrow,
+    .section-label {
+      margin: 0 0 1.5rem;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 0.94;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      max-width: 11ch;
+      font-size: clamp(3.0rem, 7vw, 6.0rem);
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      max-width: 11ch;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+    }
+
+    h3 {
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .hero-copy,
+    .section-intro,
+    .card-copy,
+    .cta-copy,
+    .process-copy {
+      margin: 0;
+      max-width: 34rem;
+      font-size: clamp(1.125rem, 2vw, 1.25rem);
+      line-height: 1.75;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      margin-top: 2.5rem;
+    }
+
+    .hero-inner {
+      max-width: 54rem;
+    }
+
+    section {
+      padding: 8rem 0;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+
+    .section-header > div {
+      max-width: 52rem;
+    }
+
+    .section-intro {
+      max-width: 42rem;
+    }
+
+    .number-grid,
+    .service-grid,
+    .proof-grid {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    .number-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .number-card {
+      position: relative;
+      padding: 2rem 0 0 8.5rem;
+      min-height: 12.5rem;
+      border-top: 1px solid var(--black);
+    }
+
+    .number-card:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .number {
+      position: absolute;
+      left: 0;
+      top: 0.15rem;
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      font-size: clamp(4rem, 9vw, 6rem);
+      line-height: 0.85;
+      opacity: 0.2;
+    }
+
+    .card-title {
+      margin: 0 0 0.9rem;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .service-card {
+      min-height: 20rem;
+      padding: 2rem;
+      border: 1px solid var(--black);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .service-meta {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .process-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .process-card {
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--black);
+    }
+
+    .proof-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .quote-card,
+    .placeholder-card {
+      min-height: 18rem;
+      border: 1px solid var(--black);
+      padding: 2rem;
+    }
+
+    .quote {
+      margin: 2rem 0 0;
+      max-width: 12ch;
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .placeholder-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .placeholder-copy {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .placeholder-tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .cta-section {
+      padding-bottom: 8rem;
+    }
+
+    .cta-panel {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+      border: 1px solid var(--black);
+      padding: 2.5rem;
+    }
+
+    .site-footer {
+      padding: 2rem 0;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        width: min(calc(100% - 6rem), var(--container));
+      }
+
+      .proof-grid,
+      .cta-panel {
+        grid-template-columns: minmax(0, 1fr) minmax(18rem, 28rem);
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4rem;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 767px) {
+      .container {
+        width: min(calc(100% - 1.5rem), var(--container));
+      }
+
+      .site-header .container,
+      .footer-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .number-card {
+        padding-left: 5.75rem;
+        min-height: 11rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top" aria-label="DANG APPS home">
+        <span>DANG APPS</span>
+      </a>
+      <a class="button" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kenny-64'});return false;">Book a Call</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <p class="eyebrow">Premium Finish-Line Agency</p>
+          <h1 style="font-family: 'Playfair Display', serif;">Fast gets you<br>to 80%. We<br>finish the rest.</h1>
+          <p class="hero-copy" style="font-family: 'Inter', sans-serif;">
+            Dang Apps helps founders and small teams turn vibe-coded products into something ready to meet real users.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kenny-64'});return false;">Book a Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Why This Exists</p>
+            <h2 style="font-family: 'Playfair Display', serif;">Vibe coding is fast. Finishing is slower.</h2>
+          </div>
+          <p class="section-intro" style="font-family: 'Inter', sans-serif;">
+            Most AI-built apps get close. Then the invisible work starts: product feel, edge cases, trust, and the details that decide whether something should go live.
+          </p>
+        </div>
+
+        <div class="number-grid">
+          <article class="number-card">
+            <span class="number" style="font-family: 'Playfair Display', serif;">01</span>
+            <h3 class="card-title" style="font-family: 'Playfair Display', serif;">The app exists.</h3>
+            <p class="card-copy" style="font-family: 'Inter', sans-serif;">The concept works. The product is real. It simply is not finished yet.</p>
+          </article>
+          <article class="number-card">
+            <span class="number" style="font-family: 'Playfair Display', serif;">02</span>
+            <h3 class="card-title" style="font-family: 'Playfair Display', serif;">The last layer is different.</h3>
+            <p class="card-copy" style="font-family: 'Inter', sans-serif;">Polish is not filler. It is where the product earns trust, clarity, and readiness.</p>
+          </article>
+          <article class="number-card">
+            <span class="number" style="font-family: 'Playfair Display', serif;">03</span>
+            <h3 class="card-title" style="font-family: 'Playfair Display', serif;">That is where Dang Apps fits.</h3>
+            <p class="card-copy" style="font-family: 'Inter', sans-serif;">We step in when the build is moving but the product still needs finish-line judgment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Services</p>
+            <h2 style="font-family: 'Playfair Display', serif;">Outcomes over effort.</h2>
+          </div>
+          <p class="section-intro" style="font-family: 'Inter', sans-serif;">
+            The goal is not more work. The goal is a stronger product that feels ready to ship.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div>
+              <p class="service-meta">Product Feel</p>
+              <h3 style="font-family: 'Playfair Display', serif;">Refine the experience.</h3>
+            </div>
+            <p class="card-copy" style="font-family: 'Inter', sans-serif;">Sharper flows, better rhythm, clearer hierarchy, and a product that feels intentionally made.</p>
+          </article>
+          <article class="service-card">
+            <div>
+              <p class="service-meta">Launch Blockers</p>
+              <h3 style="font-family: 'Playfair Display', serif;">Close what still feels brittle.</h3>
+            </div>
+            <p class="card-copy" style="font-family: 'Inter', sans-serif;">We focus on the weak points that keep a promising build from becoming a credible release.</p>
+          </article>
+          <article class="service-card">
+            <div>
+              <p class="service-meta">Trust Layer</p>
+              <h3 style="font-family: 'Playfair Display', serif;">Prepare for real users.</h3>
+            </div>
+            <p class="card-copy" style="font-family: 'Inter', sans-serif;">The final pass should make the app feel clear, reliable, and worth someone else’s attention.</p>
+          </article>
+          <article class="service-card">
+            <div>
+              <p class="service-meta">Finish-Line Support</p>
+              <h3 style="font-family: 'Playfair Display', serif;">Move from almost to live.</h3>
+            </div>
+            <p class="card-copy" style="font-family: 'Inter', sans-serif;">A focused partner for the moment when product taste and shipping discipline matter most.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Process</p>
+            <h2 style="font-family: 'Playfair Display', serif;">A short path to the finish line.</h2>
+          </div>
+          <p class="section-intro" style="font-family: 'Inter', sans-serif;">
+            We keep the structure simple so the attention stays on what changes the product.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <p class="section-label">01</p>
+            <h3 style="font-family: 'Playfair Display', serif;">Audit</h3>
+            <p class="process-copy" style="font-family: 'Inter', sans-serif;">A direct read on where the app loses trust, clarity, and finish.</p>
+          </article>
+          <article class="process-card">
+            <p class="section-label">02</p>
+            <h3 style="font-family: 'Playfair Display', serif;">Refine</h3>
+            <p class="process-copy" style="font-family: 'Inter', sans-serif;">We improve the parts users will feel immediately and the details that stop launches.</p>
+          </article>
+          <article class="process-card">
+            <p class="section-label">03</p>
+            <h3 style="font-family: 'Playfair Display', serif;">Ship</h3>
+            <p class="process-copy" style="font-family: 'Inter', sans-serif;">You move forward with a product that feels more complete, more credible, and more ready.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container proof-grid">
+        <article class="quote-card">
+          <p class="section-label">Positioning</p>
+          <p class="quote" style="font-family: 'Playfair Display', serif;">The build gets attention. The finish earns trust.</p>
+        </article>
+
+        <article class="placeholder-card">
+          <div>
+            <p class="section-label">Reserved</p>
+            <p class="placeholder-copy" style="font-family: 'Inter', sans-serif;">
+              This space is intentionally held for future case studies, founder quotes, or selected client work.
+            </p>
+          </div>
+          <p class="placeholder-tag">Proof Placeholder</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <p class="section-label">Book A Call</p>
+            <h2 style="font-family: 'Playfair Display', serif;">Bring the app that is almost ready.</h2>
+            <p class="cta-copy" style="font-family: 'Inter', sans-serif;">
+              If the product is built but still not ready to meet the world, this is the point where Dang Apps steps in.
+            </p>
+          </div>
+          <a class="button" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kenny-64'});return false;">Book a Call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>DANG APPS</span>
+      <span>Finish-Line Agency for Vibe-Coded Apps</span>
+    </div>
+  </footer>
+</body>
+</html>
